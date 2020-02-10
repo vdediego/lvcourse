@@ -8,16 +8,16 @@
         </div>
         <div class="col-9 pt-5">
             <div>
-                <h1>Title</h1>
+                <h1>{{ $user->username }}</h1>
             </div>
             <div class="d-flex">
                 <div class="pr-5"><strong>154</strong> posts</div>
                 <div class="pr-5"><strong>23k</strong> views</div>
                 <div class="pr-5"><strong>212</strong> followers</div>
             </div>
-            <div class="pt-4 font-weight-bold">Lorem ipsum</div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet animi dicta dignissimos, dolor eos ex explicabo illo incidunt ipsam iure laboriosam magnam maiores molestiae necessitatibus nesciunt perferendis, tempora, veritatis!</div>
-            <div><a href="#">www.google.de</a></div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div>{{ $user->profile->description }}</div>
+            <div><a href="{{ $user->profile->url ?? '#' }}">{{ $user->profile->url }}</a></div>
         </div>
     </div>
     <div class="row pt-4">
@@ -53,4 +53,5 @@
             <img class="w-100" src="https://scontent-mad1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.160.1279.1279a/s640x640/79951566_2758472754217731_1788201732702317284_n.jpg?_nc_ht=scontent-mad1-1.cdninstagram.com&_nc_cat=103&_nc_ohc=UrzjsgjMKg4AX9PeDUR&oh=845b3a1402b829608f734636974badd4&oe=5EBC4037" alt="">
         </div>
     </div>
+</div>
 @endsection
