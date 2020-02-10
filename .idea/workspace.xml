@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c907a6f-7b98-490d-b8e0-38c19f634e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/lvcourse.iml" afterDir="false" />
+    <list default="true" id="1c907a6f-7b98-490d-b8e0-38c19f634e31" name="Default Changelist" comment="add username to authentication">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/github-key-temp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/Logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,12 +142,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documentos/desa_mean_angular2+/ws_mean_proyectos_enteros/04_Angular" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="tasks.servers" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -155,7 +168,8 @@
       <updated>1580995331064</updated>
       <workItem from="1580995332211" duration="8849000" />
       <workItem from="1581062066720" duration="2708000" />
-      <workItem from="1581071377341" duration="4674000" />
+      <workItem from="1581071377341" duration="4955000" />
+      <workItem from="1581319656645" duration="4646000" />
     </task>
     <task id="LOCAL-00001" summary="add authentication">
       <created>1580998431183</created>
@@ -171,34 +185,51 @@
       <option name="project" value="LOCAL" />
       <updated>1581003837707</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
-    <servers />
+    <task id="LOCAL-00003" summary="add username to authentication">
+      <created>1581077767680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581077767680</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers>
+      <GitHub url="https://github.com">
+        <option name="repoAuthor" value="vdediego" />
+        <option name="repoName" value="lvcourse" />
+      </GitHub>
+    </servers>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add authentication" />
     <MESSAGE value="add dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dependencies" />
+    <MESSAGE value="add username to authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="add username to authentication" />
   </component>
   <component name="WindowStateProjectService">
     <state x="156" y="344" width="637" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580999545222">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="156" y="344" width="637" height="390" key="#com.intellij.fileTypes.FileTypeChooser/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580999545222" />
-    <state x="35" y="135" width="879" height="807" key="CommitChangelistDialog2" timestamp="1581003837584">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="1955" y="135" width="879" height="807" key="CommitChangelistDialog2" timestamp="1581322923279">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="1955" y="135" key="CommitChangelistDialog2/0.0.1920.1015/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581077767552" />
     <state x="35" y="135" width="879" height="807" key="CommitChangelistDialog2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581003837584" />
+    <state x="1955" y="135" key="CommitChangelistDialog2/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581322923279" />
     <state x="21" y="316" width="908" height="445" key="EditFileWatcherDialog" timestamp="1581002918727">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="21" y="316" width="908" height="445" key="EditFileWatcherDialog/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581002918727" />
-    <state x="258" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581002917354">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="2178" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581328831712">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="258" y="297" width="424" height="484" key="FileChooserDialogImpl/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581002917354" />
+    <state x="2178" y="297" key="FileChooserDialogImpl/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581328831712" />
     <state width="1874" height="287" key="GridCell.Tab.0.bottom" timestamp="1580997653687">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -215,23 +246,31 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1874" height="287" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1580997653687" />
-    <state x="2065" y="136" key="SettingsEditor" timestamp="1581075617260">
+    <state x="2065" y="136" key="SettingsEditor" timestamp="1581328001303">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2065" y="136" key="SettingsEditor/0.0.1920.1015/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581075617260" />
     <state x="449" y="174" key="SettingsEditor/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581005490546" />
-    <state x="75" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1581003839600">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="2065" y="136" key="SettingsEditor/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581328001303" />
+    <state x="1995" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1581322925852">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="1995" y="275" key="Vcs.Push.Dialog.v2/0.0.1920.1015/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581077770167" />
     <state x="75" y="275" width="800" height="528" key="Vcs.Push.Dialog.v2/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581003839600" />
+    <state x="1995" y="275" key="Vcs.Push.Dialog.v2/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581322925852" />
     <state x="125" y="270" width="709" height="538" key="find.popup" timestamp="1581001968276">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="125" y="270" width="709" height="538" key="find.popup/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581001968276" />
-    <state x="2063" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1581076727349">
+    <state x="2083" y="332" width="624" height="413" key="git4idea.merge.GitPullDialog" timestamp="1581327750554">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2083" y="332" width="624" height="413" key="git4idea.merge.GitPullDialog/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581327750554" />
+    <state x="2063" y="237" width="672" height="678" key="search.everywhere.popup" timestamp="1581331416506">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2063" y="237" width="672" height="678" key="search.everywhere.popup/0.0.1920.1015/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581076727349" />
     <state x="143" y="237" width="672" height="678" key="search.everywhere.popup/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1581005569924" />
+    <state x="2063" y="237" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1920.1080@1920.0.1920.1080" timestamp="1581331416506" />
   </component>
 </project>
