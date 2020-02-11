@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
+
+    protected $guarded = [];
+
     /**
      * @return BelongsTo
      */
