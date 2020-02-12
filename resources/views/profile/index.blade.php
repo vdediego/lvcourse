@@ -14,7 +14,7 @@
                     <a href="/p/create">New Post</a>
                 </div>
 
-                <a href="/profile/{{ $user->id }}/edit">Edit Post</a>
+                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
             @endcan
 
             <div class="d-flex">

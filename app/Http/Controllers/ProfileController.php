@@ -30,7 +30,7 @@ class ProfileController extends Controller
      */
     public function edit(User $user)
     {
-        $this->authorize('update', $user->profile());
+        $this->authorize('update', $user->profile);
 
         return view('profile.edit', compact('user'));
     }
@@ -43,7 +43,7 @@ class ProfileController extends Controller
      */
     public function update(User $user)
     {
-        $this->authorize('update', $user->profile());
+        $this->authorize('update', $user->profile);
 
         $data = request()->validate([
             'title' => 'required',
