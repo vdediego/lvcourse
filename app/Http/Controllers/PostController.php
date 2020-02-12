@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
@@ -13,11 +14,17 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * @return View
+     */
     public function create()
     {
         return view('post.create');
     }
 
+    /**
+     * @return Redirector
+     */
     public function store()
     {
         $data = Request()->validate([
@@ -37,6 +44,10 @@ class PostController extends Controller
         return redirect('profile/' . auth()->user()->getAuthIdentifier());
     }
 
+    /**
+     * @param Post $post
+     * @return View
+     */
     public function show(Post $post)
     {
         return view('post.show', compact('post'));
