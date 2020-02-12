@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="/storage/{{ $user->profile->image }}" class="rounded-circle logo-img">
+            <img src="{{ $user->profile->profileImage() }}" class="rounded-circle logo-img">
         </div>
         <div class="col-9 pt-5">
             @can('update', $user->profile)
