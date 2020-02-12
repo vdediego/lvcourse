@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="https://i.ebayimg.com/images/g/JpcAAOSw2gxYzPkj/s-l1600.jpg" class="rounded-circle logo-img">
+            <img src="/storage/{{ $user->profile->image }}" class="rounded-circle logo-img">
         </div>
         <div class="col-9 pt-5">
             @can('update', $user->profile)
@@ -23,7 +23,7 @@
                 <div class="pr-5"><strong>212</strong> followers</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
-            <div>{{ $user->profile->description }}</div>
+            <div>{{ $user->profile->description  }}</div>
             <div><a href="{{ $user->profile->url ?? '#' }}">{{ $user->profile->url }}</a></div>
         </div>
     </div>

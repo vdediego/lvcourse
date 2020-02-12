@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -51,7 +52,19 @@ class ProfileController extends Controller
             'image' => '',
         ]);
 
-        auth()->user()->profile->update($data);
+        $imgPath = '';
+        if (request('image')) {
+            $imgPath = Request('image')->store('profile', 'public');
+            $image = Image::make(public_path("storage/{$imgPath}"))->fit(1000,1000);
+            $image->save();
+        }
+
+        auth()->user()->profile->update(
+            array_merge(
+                $data,
+                ['image' => $imgPath]
+            )
+        );
 
         return redirect("/profile/{$user->getAuthIdentifier()}");
     }
