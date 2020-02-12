@@ -7,10 +7,16 @@
             <img src="https://i.ebayimg.com/images/g/JpcAAOSw2gxYzPkj/s-l1600.jpg" class="rounded-circle logo-img">
         </div>
         <div class="col-9 pt-5">
-            <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->username }}</h1>
-                <a href="/p/create">New Post</a>
-            </div>
+            @can('update', $user->profile)
+
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h1>{{ $user->username }}</h1>
+                    <a href="/p/create">New Post</a>
+                </div>
+
+                <a href="/profile/{{ $user->id }}/edit">Edit Post</a>
+            @endcan
+
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts()->count() }}</strong> posts</div>
                 <div class="pr-5"><strong>23k</strong> views</div>
