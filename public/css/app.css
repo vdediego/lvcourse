@@ -10888,6 +10888,7 @@ a.text-dark:focus {
 }
 
 .grid-img {
-  width: 100%;
+  width: 90px;
+  height: 90px;
 }
 

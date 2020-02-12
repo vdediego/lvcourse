@@ -7,20 +7,27 @@
             <img src="{{ $user->profile->profileImage() }}" class="rounded-circle logo-img">
         </div>
         <div class="col-9 pt-5">
-            @can('update', $user->profile)
+            <div class="d-flex justify-content-between align-items-baseline">
 
-                <div class="d-flex justify-content-between align-items-baseline">
-                    <h1>{{ $user->username }}</h1>
-                    <a href="/p/create">New Post</a>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4">{{ $user->username }}</div>
+                    <follow-button userId="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 </div>
+                <h1>{{ $user->username }}</h1>
 
+                @can('update', $user->profile)
+                    <a href="/p/create">New Post</a>
+                @endcan
+            </div>
+
+            @can('update', $user->profile)
                 <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
             @endcan
 
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts()->count() }}</strong> posts</div>
-                <div class="pr-5"><strong>23k</strong> views</div>
-                <div class="pr-5"><strong>212</strong> followers</div>
+                <div class="pr-5"><strong>{{ $user->profile->followers()->count() }}</strong> followers</div>
+                <div class="pr-5"><strong>{{ $user->following()->count() }}</strong> following</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>{{ $user->profile->description  }}</div>
