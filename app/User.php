@@ -2,12 +2,14 @@
 
 namespace App;
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * @property mixed username
@@ -51,13 +53,13 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::created(
-            function(User $user) {
-                $user->profile()->create(
-                    [
-                        'title' => $user->username
-                    ]
-                );
+        static::created(function(User $user) {
+                $user->profile()->create([
+                    'title' => $user->username
+                ]);
+
+                Mail::to($user->email)
+                    ->send(new NewUserWelcomeMail());
             }
         );
     }
