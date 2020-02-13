@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 use Intervention\Image\Facades\Image;
 
@@ -20,9 +21,27 @@ class ProfileController extends Controller
      */
     public function index(User $user)
     {
+        // Cache pre-calculated counters (30 seconds)
+        $cacheSecs = now()->addSeconds(30);
+        $postCount = Cache::remember(
+            'count.posts.' . $user->id,
+            $cacheSecs,
+            function () use ($user) {return $user->posts()->count();}
+        );
+        $followersCount = Cache::remember(
+            'count.followers.' . $user->id,
+            $cacheSecs,
+            function () use ($user) {return $user->profile->followers()->count();}
+        );
+        $followingCount = Cache::remember(
+            'count.followers.' . $user->id,
+            $cacheSecs,
+            function () use ($user) {return $user->following()->count();}
+        );
+
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        return view('profile.index', compact('user', 'follows'));
+        return view('profile.index', compact('user', 'follows', 'postCount', 'followersCount', 'followingCount'));
     }
 
     /**
