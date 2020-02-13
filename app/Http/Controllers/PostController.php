@@ -23,9 +23,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $users = auth()->user()->following()->pluck('profile.user_id');
+        $users = auth()->user()->following()->pluck('profiles.user_id');
 
-        $posts = Post::whereIn('user_id', $users)->latest()->get();
+        /** with('user') makes the limit=1 to be dynamic on pagination. Problem comes from the template,
+         * where the foreach that loops over user, fetches its info. Such query is repeating itself with LIMIT = 1.
+         * Better solution is to use LIMIT = pagination
+        */
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
 
         return view('post.index', compact('posts'));
     }
