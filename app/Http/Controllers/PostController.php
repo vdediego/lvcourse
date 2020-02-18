@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Postcard;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
@@ -23,15 +24,19 @@ class PostController extends Controller
      */
     public function index()
     {
-        $users = auth()->user()->following()->pluck('profiles.user_id');
+        $user = auth()->user()->following()->pluck('profiles.user_id');
+        if (!$user) {
+            echo "U R FOLLOWING NO ONE!!";
+        }
 
         /** with('user') makes the limit=1 to be dynamic on pagination. Problem comes from the template,
          * where the foreach that loops over user, fetches its info. Such query is repeating itself with LIMIT = 1.
          * Better solution is to use LIMIT = pagination
         */
-        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
+        $posts = Post::whereIn('user_id', $user)->with('user')->latest()->paginate(5);
+        $postcards = Postcard::whereIn('user_id', $user)->with('user')->latest()->paginate(5);
 
-        return view('post.index', compact('posts'));
+        return view('post.index', compact('posts', 'postcards'));
     }
 
     /**
@@ -52,14 +57,19 @@ class PostController extends Controller
            'image' => ['required', 'image']
         ]);
 
+        // Save physically the image into 'public' dir
         $imgPath = Request('image')->store('uploads', 'public');
         $image = Image::make(public_path("storage/{$imgPath}"))->fit(1200,1200);
         $image->save();
 
-        auth()->user()->posts()->create([
+        // Create the Post associated to that User
+        /** @var Post $createdPost */
+        $createdPost = auth()->user()->posts()->create([
             'caption' => $data['caption'],
-            'image' => $imgPath,
         ]);
+
+        // Create the Image associated to that Post
+        $createdPost->image()->create(['filename' => $imgPath]);
 
         return redirect('profile/' . auth()->user()->getAuthIdentifier());
     }

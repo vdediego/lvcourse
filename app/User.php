@@ -87,4 +87,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class)->orderByDesc('created_at');
     }
+
+    /**
+     * @return HasMany
+     */
+    public function postcards()
+    {
+        return $this->hasMany(Postcard::class)->orderByDesc('created_at');
+    }
 }

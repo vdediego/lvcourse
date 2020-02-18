@@ -28,3 +28,7 @@ Route::post('/p', 'PostController@store')->name('post.store');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
+
+Route::get('/pc/create', 'PostcardController@create')->name('postcard.create');
+Route::get('/pc/{postcard}', 'PostcardController@show')->name('postcard.show');
+Route::post('/pc', 'PostcardController@store')->name('postcard.store');
