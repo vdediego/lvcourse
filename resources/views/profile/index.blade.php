@@ -26,6 +26,7 @@
 
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $postCount }}</strong> posts</div>
+                <div class="pr-5"><strong>{{ $postcardCount }}</strong> postcards</div>
                 <div class="pr-5"><strong>{{ $followersCount }}</strong> followers</div>
                 <div class="pr-5"><strong>{{ $followingCount }}</strong> following</div>
             </div>
@@ -40,6 +41,15 @@
             <div class="col-4 pb-4">
                 <a href="/p/{{ $post->id }}">
                     <img class="w-100" src="/storage/{{ $post->image()->getResults()['filename'] }}" alt="">
+                </a>
+            </div>
+        @endforeach
+    </div>
+    <div class="row pt-4">
+        @foreach($user->postcards as $postcard)
+            <div class="col-4 pb-4">
+                <a href="/pc/{{ $postcard->id }}">
+                    <img class="w-100" src="/storage/{{ $postcard->image()->getResults()['filename'] }}" alt="">
                 </a>
             </div>
         @endforeach

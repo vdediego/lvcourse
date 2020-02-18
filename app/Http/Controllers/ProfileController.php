@@ -28,20 +28,25 @@ class ProfileController extends Controller
             $cacheSecs,
             function () use ($user) {return $user->posts()->count();}
         );
+        $postcardCount = Cache::remember(
+            'count.postcards.' . $user->id,
+            $cacheSecs,
+            function () use ($user) {return $user->postcards()->count();}
+        );
         $followersCount = Cache::remember(
             'count.followers.' . $user->id,
             $cacheSecs,
             function () use ($user) {return $user->profile->followers()->count();}
         );
         $followingCount = Cache::remember(
-            'count.followers.' . $user->id,
+            'count.following.' . $user->id,
             $cacheSecs,
             function () use ($user) {return $user->following()->count();}
         );
 
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
 
-        return view('profile.index', compact('user', 'follows', 'postCount', 'followersCount', 'followingCount'));
+        return view('profile.index', compact('user', 'follows', 'postCount', 'postcardCount', 'followersCount', 'followingCount'));
     }
 
     /**
