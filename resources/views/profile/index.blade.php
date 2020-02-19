@@ -17,6 +17,7 @@
 
                 @can('update', $user->profile)
                     <a href="/p/create">New Post</a>
+                    <a href="/pc/create">New Postcard</a>
                 @endcan
             </div>
 
@@ -36,24 +37,8 @@
         </div>
     </div>
 
-    <div class="row pt-4">
-        @foreach($user->posts as $post)
-            <div class="col-4 pb-4">
-                <a href="/p/{{ $post->id }}">
-                    <img class="w-100" src="/storage/{{ $post->image()->getResults()['filename'] }}" alt="">
-                </a>
-            </div>
-        @endforeach
-    </div>
-    <div class="row pt-4">
-        @foreach($user->postcards as $postcard)
-            <div class="col-4 pb-4">
-                <a href="/pc/{{ $postcard->id }}">
-                    <img class="w-100" src="/storage/{{ $postcard->image()->getResults()['filename'] }}" alt="">
-                </a>
-            </div>
-        @endforeach
-    </div>
+    @include('partials.posts.list')
+    @include('partials.postcards.list')
 
 </div>
 @endsection

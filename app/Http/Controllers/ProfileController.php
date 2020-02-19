@@ -11,9 +11,6 @@ use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
-    public function __construct()
-    {
-    }
 
     /**
      * @param User $user

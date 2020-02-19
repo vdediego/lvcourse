@@ -20,7 +20,7 @@ Route::get('/email', function () {
 
 Route::post('/follow/{user}', 'FollowsController@store')->name('follows.store');
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/p/create', 'PostController@create')->name('post.create');
 Route::get('/p/{post}', 'PostController@show')->name('post.show');
 Route::post('/p', 'PostController@store')->name('post.store');
