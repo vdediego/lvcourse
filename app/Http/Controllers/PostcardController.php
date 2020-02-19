@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use App\Postcard;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;

@@ -2,20 +2,24 @@
 
 namespace App\Http\View\Composers;
 
+use App\Post;
 use App\Postcard;
 use Illuminate\View\View;
 
-class PostcardComposer
+class HomeComposer
 {
     public function compose(View $view)
     {
-        $user = auth()->user()->following()->pluck('profiles.user_id');
-
         /** with('user') makes the limit=1 to be dynamic on pagination. Problem comes from the template,
          * where the foreach that loops over user, fetches its info. Such query is repeating itself with LIMIT = 1.
          * Better solution is to use LIMIT = pagination
          */
-        $followedPostcards = Postcard::whereIn('user_id', $user)->with('user')->latest()->paginate(5);
-        $view->with('partials.postcards.overview_col-6', $followedPostcards);
+        $myPosts = Post::whereIn('user_id', [auth()->user()->getAuthIdentifier()])->with('user')->latest()->paginate(5);
+        $myPostcards = Postcard::whereIn('user_id', [auth()->user()->getAuthIdentifier()])->with('user')->latest()->paginate(5);
+
+        $view->with([
+            'posts' => $myPosts,
+            'postcards' => $myPostcards
+        ]);
     }
 }

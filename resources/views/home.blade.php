@@ -4,7 +4,7 @@
     <div class="container">
         @if (count($posts) == 0 && count($postcards) == 0)
             <div class="row justify-content-between">
-                <h1 class="w-100"><strong> You are not following anybody!</strong></h1>
+                <h1 class="w-100"><strong> You are not following anybody with relevant content posted!</strong></h1>
                 <h2 class="w-100"><em>Do not expect to see anything.</em></h2>
 
                 <div class="pt-4">

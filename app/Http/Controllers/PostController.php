@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Postcard;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Intervention\Image\Facades\Image;

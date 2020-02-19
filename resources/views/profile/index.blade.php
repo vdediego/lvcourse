@@ -37,8 +37,8 @@
         </div>
     </div>
 
-    @include('partials.posts.list')
-    @include('partials.postcards.list')
+    @include('partials.posts.ownPosts', ['posts' => $user->posts])
+    @include('partials.postcards.ownPostcards', ['postcards' => $user->postcards])
 
 </div>
 @endsection

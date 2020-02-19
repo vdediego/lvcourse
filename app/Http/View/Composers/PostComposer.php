@@ -15,8 +15,7 @@ class PostComposer
          * where the foreach that loops over user, fetches its info. Such query is repeating itself with LIMIT = 1.
          * Better solution is to use LIMIT = pagination
          */
-        $posts = Post::whereIn('user_id', $user)->with('user')->latest()->paginate(5);
-
-        $view->with('posts', $posts);
+        $followedPosts = Post::whereIn('user_id', $user)->with('user')->latest()->paginate(5);
+        $view->with('partials.posts.overview_col-6', $followedPosts);
     }
 }
