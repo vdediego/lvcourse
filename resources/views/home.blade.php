@@ -4,7 +4,7 @@
     <div class="container">
         @if (count($posts) == 0 && count($postcards) == 0)
             <div class="row justify-content-between">
-                <h1 class="w-100"><strong> You are not following anybody with relevant content posted!</strong></h1>
+                <h1 class="w-100"><strong> You are not following anybody with relevant published content!</strong></h1>
                 <h2 class="w-100"><em>Do not expect to see anything.</em></h2>
 
                 <div class="pt-4">
@@ -14,6 +14,9 @@
 
             </div>
         @else
+            <div class="row d-flex">
+                // @TODO: list of all profiles
+            </div>
             <div class="row d-flex">
                 <div class="col-6 mb-2 align-content-around">
                     <h1>Interesting posts</h1>

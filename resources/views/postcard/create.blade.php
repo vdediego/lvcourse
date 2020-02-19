@@ -32,6 +32,17 @@
                                autocomplete="recipient_address" autofocus>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="body" class="col-md-4 col-form-label">Recipient Address</label>
+
+                        <input id="body"
+                               type="text"
+                               class="form-control{{ $errors->has('body') ? 'is-invalid' : '' }}"
+                               name="body"
+                               value="{{ old('body') }}"
+                               autocomplete="body" autofocus>
+                    </div>
+
                     <div class="row">
                         <label for="image" class="col-md-4 col-form-label">Photo</label>
                         <input type="file" class="form-control-file" id="image" name="image">

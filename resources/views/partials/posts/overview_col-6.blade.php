@@ -2,7 +2,7 @@
     @foreach($posts as $post)
         <div class="row">
             <div class="col-6 offset-3">
-                <a href="/profile/{{ $post->user->id }}"><img
+                <a href="/p/{{ $post->id }}"><img
                         src="/storage/{{ $post->image()->getResults() ? $post->image()->getResults()['filename'] : 'no-photo.jpg' }}"
                         class="w-100"></a>
             </div>

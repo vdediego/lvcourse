@@ -18,12 +18,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/postcard-front.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex" href="{{ route('home') }}">
                     <div><img src="/svg/Logo.svg" style="height: 50px; border-right: 1px solid #333333" class="pr-3"></div>
                     <div class="pl-3 pt-2">Proyecto Laravel</div>
                 </a>
