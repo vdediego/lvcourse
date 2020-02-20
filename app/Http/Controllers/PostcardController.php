@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Postcard;
+use App\Facades\PostcardFacade;
+use App\User;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 use Intervention\Image\Facades\Image;
@@ -61,5 +63,18 @@ class PostcardController extends Controller
     public function show(Postcard $postcard)
     {
         return view('postcard.show', compact('postcard'));
+    }
+
+    /**
+     * @param Postcard $postcard
+     */
+    public function send(Postcard $postcard)
+    {
+        $user = User::find(auth()->user()->getAuthIdentifier());
+
+        $successMessage = PostcardFacade::greetings('The postcard has been sent to ' . $postcard->recipient_name, $user->email);
+
+        // @Todo: error handling
+        dump ($successMessage);
     }
 }

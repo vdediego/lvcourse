@@ -32,3 +32,4 @@ Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.updat
 Route::get('/pc/create', 'PostcardController@create')->name('postcard.create');
 Route::get('/pc/{postcard}', 'PostcardController@show')->name('postcard.show');
 Route::post('/pc', 'PostcardController@store')->name('postcard.store');
+Route::get('/pc/send/{postcard}', 'PostcardController@send')->name('postcard.send');

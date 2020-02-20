@@ -6,6 +6,7 @@ use App\Http\View\Composers\HomeComposer;
 use App\Http\View\Composers\PostcardComposer;
 use App\Http\View\Composers\PostComposer;
 use App\Http\View\Composers\ProfileComposer;
+use App\Services\PostcardSendingService;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Services Registration
+        $this->app->singleton('PostcardFacade', function () {
+            return new PostcardSendingService(40, 60, 'ES');
+        });
     }
 
     /**
@@ -28,11 +32,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // View Composers
         View::composer('partials.postcards.*', PostcardComposer::class);
         View::composer('partials.posts.*', PostComposer::class);
-
         View::composer('home', HomeComposer::class);
-
         View::composer('partials.profiles.profiles-grid', ProfileComposer::class);
     }
 }
