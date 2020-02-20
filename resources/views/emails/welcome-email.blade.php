@@ -3,9 +3,9 @@
 
 This is an imitation of an Instagram page. Hope you enjoy!
 
-@component('mail::button', ['url' => '/profile/' . auth()->user()->getAuthIdentifier()])
+{{--@component('mail::button', ['url' => '/profile/' . auth()->user()->getAuthIdentifier()])--}}
 Go to your posts overview.
-@endcomponent
+{{--@endcomponent--}}
 
 Thanks,<br>
 {{ config('app.name') }}
