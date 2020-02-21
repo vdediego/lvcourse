@@ -11,18 +11,21 @@
 
                 <div class="d-flex align-items-center pb-3">
                     <div class="h4">{{ $user->username }}</div>
-                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
+                    @if ($user->id !== auth()->user()->getAuthIdentifier())
+                        <follow-button user-id="{{ $user->id }}"
+                                       follows="{{ $follows }}"></follow-button>
+                    @endif
                 </div>
                 <h1>{{ $user->username }}</h1>
 
                 @can('update', $user->profile)
-                    <a href="/p/create">New Post</a>
-                    <a href="/pc/create">New Postcard</a>
+                    <a href="{{ route('post.create') }}">New Post</a>
+                    <a href="{{ route('postcard.create') }}">New Postcard</a>
                 @endcan
             </div>
 
             @can('update', $user->profile)
-                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+                <a href="{{ route('profile.edit', $user->id) }}">Edit Profile</a>
             @endcan
 
             <div class="d-flex">

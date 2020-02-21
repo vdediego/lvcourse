@@ -17,8 +17,11 @@
                             <a href="{{ route('profile.show', $post->user_id) }}">
                                 <span class="text-dark">{{ $post->user->name }}</span>
                             </a>
-                            <follow-button class="pt-2 mr-4" user-id="{{ $post->user_id }}"
-                                           follows="{{ (auth()->user()) ? auth()->user()->following->contains($post->user_id) : false }}"></follow-button>
+                            @if ($post->user_id !== auth()->user()->getAuthIdentifier())
+                                <follow-button class="pt-2 mr-4"
+                                               user-id="{{ $post->user_id }}"
+                                               follows="{{ (auth()->user()) ? auth()->user()->following->contains($post->user_id) : false }}"></follow-button>
+                            @endif
                         </div>
                     </div>
                 </div>
