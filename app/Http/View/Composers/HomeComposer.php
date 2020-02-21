@@ -17,9 +17,16 @@ class HomeComposer
         $myPosts = Post::whereIn('user_id', [auth()->user()->getAuthIdentifier()])->with('user')->latest()->paginate(5);
         $myPostcards = Postcard::whereIn('user_id', [auth()->user()->getAuthIdentifier()])->with('user')->latest()->paginate(5);
 
+        // Calculate posts and postcards followed by the authenticated user
+        $profiles = auth()->user()->following()->pluck('profiles.user_id');
+        $followedPostcards = Postcard::whereIn('user_id', $profiles)->with('user')->latest()->paginate(5);
+        $followedPosts = Post::whereIn('user_id', $profiles)->with('user')->latest()->paginate(5);
+
         $view->with([
             'posts' => $myPosts,
-            'postcards' => $myPostcards
+            'postcards' => $myPostcards,
+            'followedPosts' => $followedPosts,
+            'followedPostcards' => $followedPostcards,
         ]);
     }
 }

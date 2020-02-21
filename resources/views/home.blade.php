@@ -29,8 +29,7 @@
                 </div>
             </div>
             <div class="row">
-                @include('partials.posts.overview_col-6')
-                @include('partials.postcards.overview_col-6')
+                @include('partials.listing.vertical-overview', ['posts' => $followedPosts, 'postcards' => $followedPostcards])
             </div>
             @include('partials.listing.pagination', ['post' => $posts, 'postcard' => $postcards])
         @endif

@@ -12,7 +12,7 @@ class Profile extends Model
 
     public function profileImage()
     {
-        return '/storage/' . (($this->image) ? $this->image : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.teepublic.com%2Fes-mx%2Fbolsa-de-tela%2F3309274-im-not-available-sorry&psig=AOvVaw38AqvjBeRR5eH5W08K7ZZE&ust=1581601834084000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMi5-42UzOcCFQAAAAAdAAAAABAc');
+        return ($this->image) ? '/storage/' . $this->image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMhJ8h4mmN4WdShizpv5v5zte6rQd3MHLWcuwkn1urAi5H3f2a';
     }
 
     public function user()

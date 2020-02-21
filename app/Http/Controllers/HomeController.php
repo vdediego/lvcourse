@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Postcard;
 use Illuminate\Contracts\Support\Renderable;
 
 class HomeController extends Controller

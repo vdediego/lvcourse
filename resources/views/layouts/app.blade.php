@@ -52,6 +52,11 @@
                                 </li>
                             @endif
                         @else
+                            <span class="nav-item mr-2">
+                                <a href="{{ route('profile.show', auth()->user()->getAuthIdentifier()) }}">
+                                    <div class="pl-3 pt-2">my Profile</div>
+                                </a>
+                            </span>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }} <span class="caret"></span>
